@@ -1,4 +1,4 @@
-
+int buzzer=8;
 const int ledPin1=12;
 const int ledPin2=11;
 const int ledPin3=10;
@@ -47,8 +47,20 @@ void loop() {//nothing to perform here
 lightLEDloopHelper(colorNum);
 if(isWinner){//will be set by interrupt
   isWinner=false;
+  tone(buzzer,300);
+  delay(200);
+  noTone(buzzer);
+  delay(200);
+  tone(buzzer,300);
+  delay(200);
+  noTone(buzzer);
+  delay(200);
+  tone(buzzer,300);
+  delay(200);
+  noTone(buzzer);
   winner();
   Serial.println("\nYOU\nWON");
+  
 }
 }
 void lightLEDloopHelper(long colorNum){
